@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo">120dp</dimen>
+    <dimen name="bigText">50sp</dimen>
+    <dimen name="medText">35sp</dimen>
+    <dimen name="smallText">20sp</dimen>
+    <dimen name="tinyText">12sp</dimen>
+
+</resources>
