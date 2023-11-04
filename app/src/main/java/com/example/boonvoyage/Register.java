@@ -2,12 +2,14 @@ package com.example.boonvoyage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,6 +27,9 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+//        theme:
+        DynamicColors.applyToActivityIfAvailable(this);
 
 
 //        initialization :
@@ -102,7 +107,8 @@ public class Register extends AppCompatActivity {
                      confirmPassword.requestFocus();
                      return;
                  }
-
+                 startActivity(new Intent(Register.this,Home.class));
+                 finish();
                  Toast.makeText(Register.this, "Hello there! You've successfully registered!", Toast.LENGTH_SHORT).show();
              }
          });

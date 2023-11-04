@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class Login extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        theme
+        DynamicColors.applyToActivityIfAvailable(this);
 
 //        linking of UI
 
@@ -35,6 +37,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                Login Button Action
+                startActivity(new Intent(Login.this,Home.class));
+                finish();
                 Toast.makeText(Login.this, "Logging you in", Toast.LENGTH_SHORT).show();
             }
         });
