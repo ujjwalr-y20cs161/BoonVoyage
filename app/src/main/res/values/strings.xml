@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">BoonVoyage</string>
     <string name="app">Boon Voyage</string>
+
+    <array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Trans Gender</item>
+        <item>Non-Binary</item>
+        <item>Others</item>
+        <!-- Add more items as needed -->
+    </array>
 </resources>

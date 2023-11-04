@@ -2,9 +2,11 @@ package com.example.boonvoyage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -33,6 +35,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                Login Button Action
+                Toast.makeText(Login.this, "Logging you in", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -40,13 +43,16 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                register action
+                startActivity(new Intent(Login.this, Register.class));
+                Toast.makeText(Login.this, "Register Now", Toast.LENGTH_SHORT).show();
             }
         });
 
         forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//        forgetPassword
+//        forgetPassword actions
+                Toast.makeText(Login.this, "Check Your mail to reset your password!", Toast.LENGTH_SHORT).show();
             }
         });
 
