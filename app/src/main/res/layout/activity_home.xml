@@ -5,10 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:backgroundTint="@color/quantum_googred"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_sos_24" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -81,7 +94,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/topLayout"
-                android:layout_alignParentBottom="true">
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="-30dp">
 
                 <TextView
                     android:id="@+id/homeWelcome"
@@ -140,25 +155,49 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <com.google.android.material.textfield.TextInputLayout
+
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/fromLocation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
-                            android:hint="From Location"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="10dp"
                             app:layout_constraintBottom_toTopOf="@+id/toLocation"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tripCaption">
 
-                            <com.google.android.material.textfield.TextInputEditText
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                android:layout_height="match_parent">
 
-                        <com.google.android.material.textfield.TextInputLayout
+                                <TextView
+                                    android:id="@+id/fromHint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="Start Location"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/smallText" />
+
+                                <fragment
+                                    android:id="@+id/startLocation"
+                                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_below="@id/fromHint" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:id="@+id/toLocation"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -166,16 +205,39 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:layout_marginBottom="16dp"
-                            android:hint="To Location"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="10dp"
                             app:layout_constraintBottom_toTopOf="@+id/startTrip"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/fromLocation">
 
-                            <com.google.android.material.textfield.TextInputEditText
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/toHint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="End Location"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/smallText" />
+
+                                <fragment
+                                    android:id="@+id/endLocation"
+                                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/toHint" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
 
                         <Button
                             android:id="@+id/startTrip"
@@ -201,6 +263,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/TripCard">
@@ -213,7 +276,10 @@
                             android:id="@+id/RecentTripCaption"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="24dp"
                             android:fontFamily="@font/montserrat"
                             android:text="Recent Trips"
                             android:textSize="@dimen/medText" />
@@ -252,9 +318,13 @@
                     android:id="@+id/famousTripCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="100dp"
+                    app:cardBackgroundColor="#00000000"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/RecentTrips" >
+                    app:layout_constraintTop_toBottomOf="@id/RecentTrips">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -300,6 +370,7 @@
                         </HorizontalScrollView>
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
     </ScrollView>
