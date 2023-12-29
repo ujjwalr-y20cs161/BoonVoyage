@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/SOSfab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:backgroundTint="@color/quantum_googred"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_sos_24" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/logoWrapper"
+                    android:layout_width="@dimen/smallLogo"
+                    android:layout_height="@dimen/smallLogo"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/HomeTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/HomeTitle">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/smallLogo"
+                        android:layout_height="@dimen/smallLogo"
+                        app:srcCompat="@drawable/boon_voyage" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/HomeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/major_mono_display"
+                    android:text="@string/app"
+                    android:textSize="@dimen/smallText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/logoWrapper"
+                    app:layout_constraintStart_toEndOf="@+id/menuWrapper"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menuWrapper"
+                    android:layout_width="@dimen/smallLogo"
+                    android:layout_height="@dimen/smallLogo"
+                    android:layout_marginStart="16dp"
+                    android:background="@color/material_dynamic_neutral50"
+                    android:backgroundTint="@color/design_default_color_on_primary"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/HomeTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/HomeTitle">
+
+                    <ImageButton
+                        android:id="@+id/menu"
+                        android:layout_width="@dimen/smallLogo"
+                        android:layout_height="@dimen/smallLogo"
+                        android:layout_marginLeft="5dp"
+                        android:backgroundTint="#00FFFFFF"
+                        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/topLayout">
+
+                <TextView
+                    android:id="@+id/MenuTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Menu"
+                    android:textSize="@dimen/medText"
+                    app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MenuTitle">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Emergency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/baseline_contact_emergency_24"
+                            android:drawablePadding="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:padding="16dp"
+                            android:text="Emergency Contacts"
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/smallText" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Repair"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/Emergency">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/baseline_car_repair_24"
+                            android:drawablePadding="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:padding="16dp"
+                            android:text="Mechanic Support"
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/smallText" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/GuideSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/Repair">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/baseline_person_search_24"
+                            android:drawablePadding="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:padding="16dp"
+                            android:text="Guide Support"
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/smallText" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/FuelSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/GuideSupport">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/baseline_local_gas_station_24"
+                            android:drawablePadding="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:padding="16dp"
+                            android:text="Fuel Support"
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/smallText" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/ProfileText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/FuelSupport"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Profile"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/medText" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ProfileCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ProfileText"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/userName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:padding="16dp"
+                                android:text="UserName"
+                                android:textSize="@dimen/smallText" />
+
+                            <TextView
+                                android:id="@+id/idd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/userName"
+                                android:fontFamily="mon"
+                                android:padding="16dp"
+                                android:text="id: @aj2f134gf32"
+                                android:textSize="@dimen/smallText"
+                                tools:fontFamily="@font/montserrat" />
+
+                            <Button
+                                android:id="@+id/logout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/baseline_arrow_outward_24"
+                                android:text="Logout"
+                                tools:layout_below="@id/idd" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

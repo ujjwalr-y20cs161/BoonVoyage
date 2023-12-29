@@ -73,7 +73,7 @@
                         android:layout_marginEnd="32dp"
                         android:layout_marginBottom="32dp"
                         android:gravity="center_horizontal"
-                        android:text="Travel Safely, Stay Secure: Log In"
+                        android:text="Travel Safely, Stay Secure"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
                         app:layout_constraintEnd_toEndOf="parent"
